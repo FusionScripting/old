@@ -28,6 +28,11 @@ function Library:CreateWindow(windowname,windowinfo)
     local YepTitle = Instance.new("TextLabel")
     local YepCorner = Instance.new("UICorner")
 
+    local function sizeinnit()
+        local aaaaaaaaaaaaaaaaa = TabContainer_2.AbsoluteContentSize
+        game.TweenService:Create(TabContainer, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {CanvasSize = UDim2.new(0,aaaaaaaaaaaaaaaaa.X,0,aaaaaaaaaaaaaaaaa.Y)}):Play()
+    end
+
     fu8rj82n.Name = "fu8rj82n"
     fu8rj82n.Parent = game.CoreGui
     fu8rj82n.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -177,8 +182,7 @@ function Library:CreateWindow(windowname,windowinfo)
 		YepTitle.TextTransparency = 1
 	end)
 
-    local mapplewashere = TabContainer_2.AbsoluteContentSize
-    TabContainer.CanvasSize = UDim2.new(0,mapplewashere.X,0,mapplewashere.Y)
+    sizeinnit()
 
     local UserInputService = game:GetService("UserInputService")
 	
@@ -230,6 +234,11 @@ function Library:CreateWindow(windowname,windowinfo)
         local TabCorner = Instance.new("UICorner")
         local Home = Instance.new("ScrollingFrame")
         local PageLayout = Instance.new("UIListLayout")
+
+        local function sizeinnit2()
+            local aaaaaaaaaaaaaaaaa = PageLayout.AbsoluteContentSize
+            game.TweenService:Create(Home, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {CanvasSize = UDim2.new(0,aaaaaaaaaaaaaaaaa.X,0,aaaaaaaaaaaaaaaaa.Y)}):Play()
+        end
         
         Tab.Name = "Tab"
         Tab.Parent = TabContainer
@@ -269,8 +278,7 @@ function Library:CreateWindow(windowname,windowinfo)
         PageLayout.SortOrder = Enum.SortOrder.LayoutOrder
         PageLayout.Padding = UDim.new(0,elementspacing) or UDim.new(0,6)
 
-        local mapplewashere = PageLayout.AbsoluteContentSize
-        Home.CanvasSize = UDim2.new(0,mapplewashere.X,0,mapplewashere.Y)
+        sizeinnit2()
 
         Tab.MouseButton1Down:Connect(function()
             Tab.TextSize = 9 
