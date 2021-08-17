@@ -177,12 +177,27 @@ function Library:CreateWindow(windowname,windowinfo)
 		YepTitle.TextTransparency = 1
 	end)
 
+    --[[
     for i,v in pairs(TabContainer:GetChildren()) do 
         if v:IsA("GuiButton") then
             TabContainer.CanvasSize = UDim2.new(0,0,v.Size * #v + 8 * #v + 8,0)
             print(v.Size * #v + 8 * #v + 8)
         end 
     end 
+    ]]
+    local amount = {}
+    
+    btnsize = 0
+    for i,v in pairs(game:GetService("CoreGui").fu8rj82n.Frame.DashBoard.TabContainer:GetChildren()) do 
+        if v:IsA("GuiButton") then
+            table.insert(amount,"mapple was here")
+            btnsize = v.Size
+        end 
+    end 
+
+    TabContainer.CanvasSize = UDim2.new(0,0,26 * #amount + 8 * #amount + 8,0)
+    
+    print(26 * #amount + 8 * #amount + 8)
     
     local UserInputService = game:GetService("UserInputService")
 	
