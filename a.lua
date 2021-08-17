@@ -177,27 +177,9 @@ function Library:CreateWindow(windowname,windowinfo)
 		YepTitle.TextTransparency = 1
 	end)
 
-    --[[
-    for i,v in pairs(TabContainer:GetChildren()) do 
-        if v:IsA("GuiButton") then
-            TabContainer.CanvasSize = UDim2.new(0,0,v.Size * #v + 8 * #v + 8,0)
-            print(v.Size * #v + 8 * #v + 8)
-        end 
-    end 
-    ]]
-    local amount = {}
-    
-    btnsize = 0
-    for i,v in pairs(game:GetService("CoreGui").fu8rj82n.Frame.DashBoard.TabContainer:GetChildren()) do 
-        if v:IsA("GuiButton") then
-            table.insert(amount,"mapple was here")
-            btnsize = v.Size
-        end 
-    end 
+    local mapplewashere = TabContainer_2.AbsoluteContentSize
+    TabContainer.CanvasSize = UDim2.new(0,mapplewashere.X,0,mapplewashere.Y)
 
-    TabContainer.CanvasSize = UDim2.new(0,0,26 * #amount,0)
-    print(26 * #amount)
-    
     local UserInputService = game:GetService("UserInputService")
 	
 	local gui = Frame
@@ -277,7 +259,7 @@ function Library:CreateWindow(windowname,windowinfo)
         Home.Size = UDim2.new(0, 298, 0, 205)
         Home.ScrollBarThickness = 3
         Home.ScrollBarImageColor3 = Color3.fromRGB(5,5,5)
-        Home.CanvasSize = UDim2.new(0,0,scrollsize,0) or UDim2.new(0,0,4,0)
+        Home.CanvasSize = UDim2.new(0,0,0,0)
         Home.Visible = visible or false
         Home.ScrollingEnabled = true
         print("the um")
@@ -286,6 +268,9 @@ function Library:CreateWindow(windowname,windowinfo)
         PageLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
         PageLayout.SortOrder = Enum.SortOrder.LayoutOrder
         PageLayout.Padding = UDim.new(0,elementspacing) or UDim.new(0,6)
+
+        local mapplewashere = PageLayout.AbsoluteContentSize
+        Home.CanvasSize = UDim2.new(0,mapplewashere.X,0,mapplewashere.Y)
 
         Tab.MouseButton1Down:Connect(function()
             Tab.TextSize = 9 
