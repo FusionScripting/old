@@ -77,6 +77,7 @@ function Library:CreateWindow(windowname,windowinfo)
     TabContainer.ScrollBarImageColor3 = Color3.fromRGB(5,5,5)
     TabContainer.CanvasSize = UDim2.new(0,0,0,0)
     TabContainer.Visible = true
+    TabContainer.ScrollingEnabled = true
     
     TabContainer_2.Name = "TabContainer"
     TabContainer_2.Parent = TabContainer
@@ -263,6 +264,7 @@ function Library:CreateWindow(windowname,windowinfo)
         Home.ScrollBarImageColor3 = Color3.fromRGB(5,5,5)
         Home.CanvasSize = UDim2.new(0,0,scrollsize,0) or UDim2.new(0,0,4,0)
         Home.Visible = visible or false
+        Home.ScrollingEnabled = true
         print("the um")
         PageLayout.Name = "PageLayout"
         PageLayout.Parent = Home
