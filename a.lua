@@ -195,9 +195,8 @@ function Library:CreateWindow(windowname,windowinfo)
         end 
     end 
 
-    TabContainer.CanvasSize = UDim2.new(0,0,26 * #amount + 8 * #amount,0)
-    
-    print(26 * #amount + 8 * #amount)
+    TabContainer.CanvasSize = UDim2.new(0,0,26 * #amount,0)
+    print(26 * #amount)
     
     local UserInputService = game:GetService("UserInputService")
 	
