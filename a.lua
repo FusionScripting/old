@@ -179,7 +179,7 @@ function Library:CreateWindow(windowname,windowinfo)
 
     for i,v in pairs(TabContainer:GetChildren()) do 
         if v:IsA("GuiButton") then
-            TabContainer.CanvasSize = v.Size * #v + 8 * #v + 8
+            TabContainer.CanvasSize = UDim2.new(0,0,v.Size * #v + 8 * #v + 8,0)
         end 
     end 
     
